@@ -1,0 +1,172 @@
+/*
+	Theme Name: flaglove
+	Version: 1.0
+*/
+html, body {
+	font-family: Arial, sans-serif;
+//	background-color:#212121;
+//	background-color:#F0F0F0;
+	//background-image:url('http://localhost/wordpress/bg.jpg');
+	height:100%;
+}
+
+a {
+	text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,span {
+	word-wrap:break-word;
+}
+h1 {
+	font-size:50px;
+	margin-bottom:10px;
+}
+h3 {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+h4 {
+	margin-top:10px;
+}
+
+a:visited,a:link {
+	color:inherit;
+}
+
+#post_title_list  li {
+	list-style-type:none;
+}
+
+
+/*#index_main {
+	width:100%;
+	margin-left:-10px;
+	margin-right:0px;
+	margin-top:-10px;
+	//border-style:solid;
+	height:1000px;
+	//border-width:1px;
+	//border-color:#DDDDDD;
+}*/
+#index_main {
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-10px;
+	border-style:solid;
+	height:100%;
+	border-width:1px;
+	border-color:#eaeaea;
+}
+
+.content_div {
+	color: #666666;
+	font-size:20px;
+	width:70%;
+	float:right;
+	background-color:#ffffff;
+	height:100%;
+}
+
+.content_title1 {
+	color:white;
+	height:40px;
+	padding-top:30px;
+	padding-right:20px;
+	padding-bottom:20px;
+	margin-left:85%;
+	text-align: right;
+	overflow:auto;
+	background-color:#cccccc;
+}
+
+#post_title_list {
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	//color: gray;
+	font-size:20px;
+	//float:right;
+	padding-top:20px;
+	//padding-left:20%;
+	font-size:24px;
+}
+
+.list_post_title {
+	font-size:24px;
+	font-weight:bold;
+}
+#post_title_list .post_date {
+	font-size:16px;
+	margin-top:-20px;
+}
+
+#post_title_list p {
+	margin:0 0 5px 0;
+}
+
+#sidebar {
+	color:#cccccc;
+//	color:#99cc33;
+	width: 30%;
+	height:100%;
+	float:left;
+	background-color:#000000;
+	text-align:center;
+}
+
+
+#blog_name,#blog_description{
+	color:#99cc33;
+}
+
+#blog_name {
+	margin-top: 20px;
+	margin-bottom:8px;
+}
+
+
+#blog_name:hover {
+	color:#99cc33;
+	//color:#eeeeee;
+}
+
+#blog_description{
+	//color:#AAAAAA;
+	font-weight:lighter;	
+}
+#blog_description:hover {
+	color:#eeeeee;
+}
+
+#blog_title , .widgets_div{
+	min-height:150px;
+	overflow:auto;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	border-bottom-color:#1A1A1A;
+}
+
+.widgets_div {
+	margin-top:20px;
+	text-align:left;
+	margin-left:auto;
+	margin-right:auto;
+	min-height:120px;
+}
+.widgets_other {
+	bottom-bottom-width:0px;
+	border-bottom-style:none;
+}
+.widgets_title {
+	font-size:20px;
+	margin-left:32%;
+}
+.widgets_div ul{
+	margin-left:25%;
+}
+.widgets_div li{
+	margin-bottom:5px;
+}
+.widgets_div a{
+	color:inherit;
+}
