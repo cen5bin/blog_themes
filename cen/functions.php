@@ -50,10 +50,27 @@
 			$home .= '?menu_item=' . $menu_item;
 			$flag = true;
 		}
+		$category = $_GET['category'];
+		if ($category != null) {
+			$home .= ($flag?'&':'?').'category='.$category;
+			$flag = true;
+		}
 		if ($offset == $value) 	return $ret;
 		if ($value == FIRST_PAGE) $ret = $home;
 	   	elseif ($value == LAST_PAGE) $ret = $home . ($flag?'&':'?').'offset='.cen_get_max_page_count();
 		else $ret = $home . ($flag?'&':'?').'offset='.$value;
 		return $ret;	
+	}
+
+	function cen_get_pre_post() {
+		$prev_post = get_previous_post();
+		if (!empty( $prev_post )) return $prev_post;
+		return null;
+	}
+
+	function cen_get_next_post() {
+		$next_post = get_next_post();
+		if (!empty($next_post)) return $next_post;
+		return null;
 	}
 ?>
