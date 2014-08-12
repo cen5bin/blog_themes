@@ -122,12 +122,12 @@ hr {
 }
 
 
-#posts_container {
+#posts_container, #post_list {
 	padding-left:5%;
 	padding-right:5%;
 }
 
-#posts_container .post_title {
+.post_title {
 	margin-left:-3%;
 	margin-bottom:30px;
 	color:#99cc33;
@@ -153,6 +153,19 @@ hr {
 #posts_container .separate {
 	margin-left:-5%;
 	margin-right:-5%;
+}
+
+#post_list {
+	margin-top:20px;
+}
+
+#post_list .post_title {
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-bottom:0px;
+	padding-top:0px;
+	font-size:20px;
+	line-height:1.5;
 }
 
 

@@ -1,12 +1,13 @@
 <div id="menubar"> 
 <ul>
 <?php 
-	$home = get_bloginfo('url');
+	$home = get_bloginfo('url');	
+	$prefix = $home.'/?menu_item=';
 	$menu_items = array(
 			'blog'=>$home, 
-			'list'=>$home.'/post_list.php', 
-			'category'=>'#', 
-			'about'=>'#'
+			'list'=>($prefix. POST_LIST), 
+			'category'=>($prefix.POST_CAT), 
+			'about'=>($prefix.ABOUT_ME)
 			);
 	foreach ($menu_items as $key=>$value):
 ?>

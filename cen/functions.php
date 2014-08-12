@@ -1,26 +1,37 @@
 <?php
     define('POSTS_PER_PAGE', 5);
+    define('POST_LIST_PER_PAGE', 25);
 	define('FIRST_PAGE', '首页');
 	define('LAST_PAGE', '尾页');
-	function cen_get_posts() {
-		$offset= $_GET['offset'];
-		$args = array(
-				'posts_per_page'=> POSTS_PER_PAGE, 
-				'orderby'=>'post_date',
-				'order'=>'DESC',
-				'post_status'=>'publish'
-				);
-		if ($offset != null)
-			$args['offset'] = ($offset - 1) * POSTS_PER_PAGE;
-		return get_posts($args);
-	}
+
+	define('POST_LIST', 'post_list');
+	define('POST_CAT', 'post_category');
+	define('ABOUT_ME', 'about');
 	
+	$count = POSTS_PER_PAGE;
+
+	function cen_get_filename($item) {
+		if ($item == null) return 'posts_container.php';
+		return $item . '.php';
+	}
+
 	function cen_get_post_count() {
 		return wp_count_posts()->publish;
 	}
 
 	function cen_get_max_page_count() {
-		return floor((cen_get_post_count() + POSTS_PER_PAGE - 1) / POSTS_PER_PAGE);
+		global $count;
+		return floor((cen_get_post_count() + $count - 1) / $count);
+	}
+
+	function cen_get_item_count_per_page() {
+		global $count;
+		return $count;
+	}
+	
+	function cen_set_item_count_per_page($count1) {
+		global $count;
+		$count = $count1;
 	}
 
 	function page_div_class($offset, $value) {
@@ -33,10 +44,16 @@
 	function page_div_href($offset, $value) {
 		$ret = '';
 		$home = get_bloginfo('url') . '/';
+		$menu_item = $_GET['menu_item'];
+		$flag = false;
+		if ($menu_item != null) {
+			$home .= '?menu_item=' . $menu_item;
+			$flag = true;
+		}
 		if ($offset == $value) 	return $ret;
 		if ($value == FIRST_PAGE) $ret = $home;
-	   	elseif ($value == LAST_PAGE) $ret = $home . '?offset='.cen_get_max_page_count();
-		else $ret = $home . '?offset='.$value;
+	   	elseif ($value == LAST_PAGE) $ret = $home . ($flag?'&':'?').'offset='.cen_get_max_page_count();
+		else $ret = $home . ($flag?'&':'?').'offset='.$value;
 		return $ret;	
 	}
 ?>
